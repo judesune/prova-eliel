@@ -1,7 +1,7 @@
 package com.example.padaria.services;
 
 import com.example.padaria;
-import com.example.padaria.PadariaApplication;.models.PadariaModel;
+import com.example.padaria.PadariaApplication.models.PadariaModel;
 import com.example.padaria.repositories.PadariaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import java.util.List;
 public class PadariaServices {
 
    @Autowired
-   private PadariaRepository funcionarioRepository;
+   private PadariaRepository padariaRepository;
 
    public List<PadariaModel> findAll(){
        return  padariaRepository.findAll();
@@ -23,7 +23,7 @@ public class PadariaServices {
    }
 
    public PadariaModel criarPessoa(PadariaModel padariaModelModel) {
-       return  padariaRepository.save( padariaModel);
+       return  padariaRepository.save(padariaModel);
    }
 
     public void deletar(Long id){
@@ -36,10 +36,6 @@ public class PadariaServices {
        func.setCpf(padariaModel.getEndereco());
        return  padariaRepository.save(func);
     }
-
-
-
-
 
 
 }
